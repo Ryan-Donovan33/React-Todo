@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TodoList from './components/TodoComponents/TodoList';
 
 const todos = [
 	{
@@ -24,10 +25,27 @@ class App extends Component {
 		};
 	}
 
+	addItem = (e, item) => {
+		e.preventDefault();
+
+		const newItem = {
+			task: item,
+			id: Date.now(),
+			completed: false
+		};
+
+		this.setState({
+			todos: [ ...this.state.todos, newItem ]
+		});
+	};
+
 	render() {
 		return (
 			<div className="App">
-				<h2>ToDo List!</h2>
+				<div className="header">
+					<h2>ToDo List!</h2>
+				</div>
+				<TodoList />
 			</div>
 		);
 	}
