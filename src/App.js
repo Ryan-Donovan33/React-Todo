@@ -25,17 +25,17 @@ class App extends Component {
 		};
 	}
 
-	addItem = (e, item) => {
+	addTodo = (e, todo) => {
 		e.preventDefault();
 
-		const newItem = {
-			task: item,
+		const newTodo = {
+			task: todo,
 			id: Date.now(),
 			completed: false
 		};
 
 		this.setState({
-			todos: [ ...this.state.todos, newItem ]
+			todos: [ ...this.state.todos, newTodo ]
 		});
 	};
 
