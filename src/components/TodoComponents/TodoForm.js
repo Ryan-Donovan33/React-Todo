@@ -7,30 +7,10 @@ class TodoForm extends Component {
 			todo: ''
 		};
 	}
-	addTodo = (e, todo) => {
-		e.preventDefault();
-
-		const newTodo = {
-			task: todo,
-			id: Date.now(),
-			completed: false
-		};
-
-		this.setState({
-			todos: [ ...this.state.todos, newTodo ]
-		});
-	};
 
 	submitTodo = (e) => {
 		e.preventDefault();
 		this.props.addTodo(e, this.state.todo);
-	};
-
-	clearCompleted = (e) => {
-		e.preventDefault();
-		this.setState({
-			todos: this.state.todos.filter((item) => !item.completed)
-		});
 	};
 
 	handleChanges = (e) => {

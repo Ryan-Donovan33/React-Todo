@@ -27,6 +27,19 @@ class App extends Component {
 			todos
 		};
 	}
+	addTodo = (e, todo) => {
+		e.preventDefault();
+
+		const newTodo = {
+			task: todo,
+			id: Date.now(),
+			completed: false
+		};
+
+		this.setState({
+			todos: [ ...this.state.todos, newTodo ]
+		});
+	};
 
 	toggleTodo = (todoId) => {
 		console.log(todoId);
@@ -41,6 +54,13 @@ class App extends Component {
 				}
 				return item;
 			})
+		});
+	};
+
+	clearCompleted = (e) => {
+		e.preventDefault();
+		this.setState({
+			todos: this.state.todos.filter((item) => !item.completed)
 		});
 	};
 
