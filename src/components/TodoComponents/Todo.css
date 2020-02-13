@@ -31,6 +31,16 @@ span {
 	margin: 0 auto;
 }
 
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+h2 {
+	font-size: 30px;
+	color: white;
+}
+
 .todo-list {
 	display: flex;
 	flex-flow: row wrap;
@@ -51,4 +61,11 @@ span {
 .item.purchased {
 	background-color: #0d017a;
 	text-decoration: line-through;
+}
+
+button {
+	background-color: #2646fc;
+	color: white;
+	font-size: 16px;
+	padding: 6px 14px;
 }
