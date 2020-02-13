@@ -58,7 +58,7 @@ h2 {
 	cursor: pointer;
 }
 
-.item.purchased {
+.todo.completed {
 	background-color: #0d017a;
 	text-decoration: line-through;
 }
