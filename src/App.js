@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import TodoList from './components/TodoComponents/TodoList';
+import TodoForm from './components/TodoComponents/TodoForm';
+
+// import './components/TodoComponents/Todo.css';
 
 const todos = [
 	{
@@ -25,17 +28,19 @@ class App extends Component {
 		};
 	}
 
-	addTodo = (e, todo) => {
-		e.preventDefault();
-
-		const newTodo = {
-			task: todo,
-			id: Date.now(),
-			completed: false
-		};
+	toggleTodo = (todoId) => {
+		console.log(todoId);
 
 		this.setState({
-			todos: [ ...this.state.todos, newTodo ]
+			todos: this.state.todos.map((item) => {
+				if (todoId === item.id) {
+					return {
+						...item,
+						completed: !item.completed
+					};
+				}
+				return item;
+			})
 		});
 	};
 
@@ -44,8 +49,9 @@ class App extends Component {
 			<div className="App">
 				<div className="header">
 					<h2>ToDo List!</h2>
+					<TodoForm addTodo={this.addTodo} />
 				</div>
-				<TodoList />
+				<TodoList todos={this.state.todos} toggleTodo={this.toggleTodo} clearCompleted={this.clearCompleted} />
 			</div>
 		);
 	}
