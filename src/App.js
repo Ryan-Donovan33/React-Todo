@@ -42,7 +42,7 @@ class App extends Component {
 	};
 
 	toggleTodo = (todoId) => {
-		console.log(todoId);
+		console.log(todoId, 'todo Ids ');
 
 		this.setState({
 			todos: this.state.todos.map((item) => {

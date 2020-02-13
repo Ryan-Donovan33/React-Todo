@@ -63,6 +63,23 @@ h2 {
 	text-decoration: line-through;
 }
 
+form {
+	width: 50%;
+	display: flex;
+	justify-content: flex-end;
+}
+form > input {
+	background-color: #26f5f5;
+	border: 0;
+	padding: 6px 0;
+	font-size: 1rem;
+	width: 240px;
+	outline: 0;
+	color: white;
+	border-bottom: 1px solid #0d017a;
+	margin-right: 8px;
+}
+
 button {
 	background-color: #2646fc;
 	color: white;
