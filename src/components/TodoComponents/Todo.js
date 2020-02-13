@@ -4,7 +4,7 @@ const Todo = (props) => {
 	return (
 		<div>
 			{/* need to edits props here and add an onClick function and then edit to make css reflect being completed or not */}
-			<p>{props.todo.task}</p>
+			<p>{props.item.task}</p>
 		</div>
 	);
 };
