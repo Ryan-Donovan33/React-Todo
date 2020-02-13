@@ -38,3 +38,17 @@ span {
 	width: 100%;
 	margin: 0 auto;
 }
+
+.todo {
+	background-color: #00ffff;
+	width: 45%;
+	text-align: left;
+	margin: 4px 0;
+	padding-left: 8px;
+	cursor: pointer;
+}
+
+.item.purchased {
+	background-color: #0d017a;
+	text-decoration: line-through;
+}
